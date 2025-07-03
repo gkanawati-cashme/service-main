@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: service-main
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/gkanawati-cashme/config-server.git
+          clone-on-start: true
+          searchPaths: config
+        prefix: /config
+
+server:
+  port: 8888
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+  instance:
+    hostname: localhost
+  server:
+    enableSelfReservation: false
